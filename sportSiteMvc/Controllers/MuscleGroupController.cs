@@ -82,7 +82,7 @@ namespace sportSiteMvc.Controllers
 
             return RedirectToAction("Show/" + MuscleGroupID);
         }
-        //================================================================================= Edit
+        //================================================================================= Delete
 
         [HttpPost]
         public ActionResult Delete(int? id)
