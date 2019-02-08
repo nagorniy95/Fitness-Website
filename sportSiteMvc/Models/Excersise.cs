@@ -10,7 +10,7 @@ namespace sportSiteMvc.Models
     public class Excersise
     {
         [Key, ScaffoldColumn(false)]
-        public int exerseseId { get; set; }
+        public int exersiseId { get; set; }
 
         [Required, StringLength(255), Display(Name = "Title")]
         public string excersiseTitle { get; set; }

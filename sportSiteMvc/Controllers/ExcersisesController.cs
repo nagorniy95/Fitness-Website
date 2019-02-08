@@ -9,27 +9,28 @@ using System.Web;
 using System.Web.Mvc;
 using System.Diagnostics;
 using sportSiteMvc.Models;
-
+/*
 namespace sportSiteMvc.Controllers
 {
-    public class MuscleGroupController : Controller
+    public class ExcersisesController : Controller
     {
-        MuscleGroupsContext db = new MuscleGroupsContext();
+        private MuscleGroupsContext db = new MuscleGroupsContext();
         public ActionResult Index()
         {
             return RedirectToAction("List");
         }
+
         //================================================================================= Read
 
         public ActionResult List()
         {
 
-            string query = "select * from MuscleGroups";
+            string query = "select * from Excersises";
             // Обьявить переменную
-            IEnumerable<MuscleGroup> muscleGroups;
-            muscleGroups = db.MuscleGroups.SqlQuery(query);
+            IEnumerable<MuscleGroup> excersises;
+            excersises = db.MuscleGroups.SqlQuery(query);
 
-            return View(muscleGroups);
+            return View(excersises);
         }
         //================================================================================= Create
 
@@ -38,25 +39,15 @@ namespace sportSiteMvc.Controllers
 
             return View();
         }
-
-        public ActionResult Create()
-        {
-            //I want to show the new muscle group form
-
-            return View();
-        }
-
         [HttpPost]
-        public ActionResult Create(string MuscleGroupName, string MuscleGroupDesc)
+        public ActionResult Create(string excersiseTitle_New, string excersisePhoto_New, string excersiseContent_New)
         {
-
-            
-            //i want to insert data
-            string query = "insert into MuscleGroups (MuscleGroupName, MuscleGroupDesc)" +
-                " values (@name, @desc)";
-            SqlParameter[] myparams = new SqlParameter[2];
-            myparams[0] = new SqlParameter("@name", MuscleGroupName);
-            myparams[1] = new SqlParameter("@desc", MuscleGroupDesc);
+            string query = "insert into Excersises (excersiseTitle,  excersisePhoto, excersiseContent)" +
+                " values (@title, @photo, @content)";
+            SqlParameter[] myparams = new SqlParameter[3];
+            myparams[0] = new SqlParameter("@title", excersiseTitle_New);
+            myparams[1] = new SqlParameter("@photo", excersisePhoto_New);
+            myparams[2] = new SqlParameter("@content", excersiseContent_New);
 
             db.Database.ExecuteSqlCommand(query, myparams);
 
@@ -66,34 +57,35 @@ namespace sportSiteMvc.Controllers
 
         public ActionResult Edit(int? id)
         {
-            if ((id == null) || (db.MuscleGroups.Find(id) == null))
+            if ((id == null) || (db.Excersises.Find(id) == null))
             {
                 return HttpNotFound();
             }
-            string query = "select * from MuscleGroups where MuscleGroupID=@id";
+            string query = "select * from Excersises where exersiseId=@id";
             SqlParameter param = new SqlParameter("@id", id);
-            MuscleGroup mytag = db.MuscleGroups.SqlQuery(query, param).FirstOrDefault();
+            Excersise mytag = db.Excersises.SqlQuery(query, param).FirstOrDefault();
             return View(mytag);
         }
 
 
         [HttpPost]
-        public ActionResult Edit(int? MuscleGroupID, string MuscleGroupName, string MuscleGroupDesc)
+        public ActionResult Edit(int? exersiseId, string excersiseTitle, string excersisePhoto, string excersiseContent)
         {
-            if ((MuscleGroupID == null) || (db.MuscleGroups.Find(MuscleGroupID) == null))
+            if (exersiseId == null) || (db.MuscleGroups.Find(exersiseId) == null))
             {
                 return HttpNotFound();
             }
-            string query = "update MuscleGroups set MuscleGroupName=@name, MuscleGroupDesc=@desc" +
-                " where MuscleGroupID=@id";
-            SqlParameter[] myparams = new SqlParameter[3];
-            myparams[0] = new SqlParameter("@name", MuscleGroupName);
-            myparams[1] = new SqlParameter("@desc", MuscleGroupDesc);
-            myparams[2] = new SqlParameter("@id", MuscleGroupID);
+            string query = "update Excersises set excersiseTitle=@title, excersisePhoto=@photo, excersiseContent=Content" +
+                " where exersiseId=@id";
+            SqlParameter[] myparams = new SqlParameter[4];
+            myparams[0] = new SqlParameter("@title", excersiseTitle);
+            myparams[1] = new SqlParameter("@photo", excersisePhoto);
+            myparams[2] = new SqlParameter("@content", excersiseContent);
+            myparams[3] = new SqlParameter("@id", exersiseId);
 
             db.Database.ExecuteSqlCommand(query, myparams);
 
-            return RedirectToAction("Show/" + MuscleGroupID);
+            return RedirectToAction("Show/" + exersiseId);
         }
         //================================================================================= Delete
 
@@ -130,3 +122,4 @@ namespace sportSiteMvc.Controllers
 
     }
 }
+*/
