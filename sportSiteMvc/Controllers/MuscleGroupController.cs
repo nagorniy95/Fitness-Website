@@ -93,22 +93,26 @@ namespace sportSiteMvc.Controllers
 
             db.Database.ExecuteSqlCommand(query, myparams);
 
-            return RedirectToAction("Show/" + MuscleGroupID);
+            return RedirectToAction("List");
         }
         //================================================================================= Delete
 
-        [HttpPost]
+        
         public ActionResult Delete(int? id)
         {
+            //Debug.WriteLine("The requested delete id is "+id);
+            //return View("List");
+            
             if ((id == null) || (db.MuscleGroups.Find(id) == null))
             {
                 return HttpNotFound();
 
             }
-            string query = "delete from MuscleGroups where MuscleGroupId=@id";
+            string query = "delete from MuscleGroups where MuscleGroupID=@id";
             SqlParameter param = new SqlParameter("@id", id);
             db.Database.ExecuteSqlCommand(query, param);
-            return View("List");
+            return RedirectToAction("List");
+            
         }
 
         public ActionResult Show(int? id)
@@ -118,7 +122,7 @@ namespace sportSiteMvc.Controllers
                 return HttpNotFound();
 
             }
-            string query = "select * from MuscleGroups where MuscleGroupId=@id";
+            string query = "select * from MuscleGroups where MuscleGroupID=@id";
             SqlParameter param = new SqlParameter("@id", id);
 
             MuscleGroup MuscleGroupstoshow = db.MuscleGroups.Find(id);
