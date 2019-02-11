@@ -19,7 +19,7 @@ namespace sportSiteMvc.Models
         }
 
         public DbSet<MuscleGroup> MuscleGroups { get; set; }
-        public DbSet<Excersise> Excersises { get; set; }
+        public DbSet<Exercise> Exercises { get; set; }
 
     }
 }

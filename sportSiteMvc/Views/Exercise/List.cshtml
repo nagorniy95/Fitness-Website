@@ -1,0 +1,24 @@
+﻿@model IEnumerable<sportSiteMvc.Models.Exercise>
+
+@{
+    ViewBag.Title = "List";
+}
+
+<div>
+    <h2>Exercise</h2>
+</div>
+<div>
+    @Html.ActionLink("New Exercise", "Create", "Exercise")
+</div>
+<div>
+    @foreach (var exercise in Model)
+    {
+        <div>
+            @Html.ActionLink(exercise.ExerciseTitle, "Details/" + exercise.ExerciseId, "Exercise")
+        </div>
+        <div>
+            @Html.ActionLink("Edit", "Edit", new { id = exercise.ExerciseId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = exercise.ExerciseId })
+        </div>
+    }
+</div>

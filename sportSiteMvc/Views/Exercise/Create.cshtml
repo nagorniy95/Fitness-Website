@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create Exercise</h2>
+
+<form method="POST" action="/Exercise/Create">
+    <div>
+        <div>Title:</div>
+        <input type="text" id="ExerciseTitle_New" name="ExerciseTitle" />
+    </div>
+    <div>
+        <div>Photo:</div>
+        <input type="text" id="ExercisePhoto_New" name="ExercisePhoto" />
+    </div>
+    <div>
+        <div>Content:</div>
+        <input type="text" id="ExerciseContent_New" name="ExerciseContent" />
+    </div>
+
+    <div>
+        <input type="submit" value="Submit" />
+    </div>
+
+
+</form>
+

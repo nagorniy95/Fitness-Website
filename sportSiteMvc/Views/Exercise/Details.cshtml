@@ -1,0 +1,19 @@
+﻿@model sportSiteMvc.Models.Exercise
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>@Model.ExerciseTitle</h2>
+
+@foreach (var exercise in Model.ExerciseTitle)
+{
+    <span>@exercise</span>
+}
+<div>
+    @Html.ActionLink("Edit", "Edit/" + Model.ExerciseId)
+</div>
+<div>
+    <p>@Model.ExercisePhoto</p>
+    <p>@Model.ExerciseContent</p>
+</div>

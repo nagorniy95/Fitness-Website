@@ -7,19 +7,19 @@ using System.ComponentModel.DataAnnotations;
 
 namespace sportSiteMvc.Models
 {
-    public class Excersise
+    public class Exercise
     {
         [Key, ScaffoldColumn(false)]
-        public int exersiseId { get; set; }
+        public int ExerciseId { get; set; }
 
         [Required, StringLength(255), Display(Name = "Title")]
-        public string excersiseTitle { get; set; }
+        public string ExerciseTitle { get; set; }
 
         [StringLength(255), Display(Name = "Photo")]
-        public string excersisePhoto { get; set; }
+        public string ExercisePhoto { get; set; }
 
         [StringLength(int.MaxValue), Display(Name = "Content")]
-        public string excersiseContent { get; set; }
+        public string ExerciseContent { get; set; }
 
         //One excersise to many muscel groups
         public virtual ICollection<MuscleGroup> MuscleGroups { get; set; }

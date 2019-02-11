@@ -135,13 +135,13 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\ExcersisesController.cs" />
+    <Compile Include="Controllers\ExerciseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MuscleGroupController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Excersise.cs" />
+    <Compile Include="Models\Exercise.cs" />
     <Compile Include="Models\MuscleGroup.cs" />
     <Compile Include="Models\MuscleGroupsContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -226,6 +226,10 @@
     <Content Include="Views\MuscleGroup\Delete.cshtml" />
     <Content Include="Views\MuscleGroup\Edit.cshtml" />
     <Content Include="Views\MuscleGroup\List.cshtml" />
+    <Content Include="Views\Exercise\List.cshtml" />
+    <Content Include="Views\Exercise\Create.cshtml" />
+    <Content Include="Views\Exercise\Details.cshtml" />
+    <Content Include="Views\Exercise\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

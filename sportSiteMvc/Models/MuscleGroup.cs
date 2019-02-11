@@ -20,7 +20,7 @@ namespace sportSiteMvc.Models
 
         //public virtual ICollection<Excersise> Excersises { get; set; }
 
-        public virtual Excersise excersise { get; set; }
+        public virtual Exercise exercise { get; set; }
 
 
 
