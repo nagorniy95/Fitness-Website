@@ -57,40 +57,42 @@ namespace sportSiteMvc.Controllers
 
             return RedirectToAction("List");
         }
-        /*
+        
         //================================================================================= Edit
 
         public ActionResult Edit(int? id)
         {
-            if ((id == null) || (db.MuscleGroups.Find(id) == null))
+            if ((id == null) || (db.Exercises.Find(id) == null))
             {
                 return HttpNotFound();
             }
-            string query = "select * from MuscleGroups where MuscleGroupID=@id";
+            string query = "select * from Exercises where ExerciseId=@id";
             SqlParameter param = new SqlParameter("@id", id);
-            MuscleGroup mytag = db.MuscleGroups.SqlQuery(query, param).FirstOrDefault();
+            Exercise mytag = db.Exercises.SqlQuery(query, param).FirstOrDefault();
             return View(mytag);
         }
 
 
         [HttpPost]
-        public ActionResult Edit(int? MuscleGroupID, string MuscleGroupName, string MuscleGroupDesc)
+        public ActionResult Edit(int? id, string ExerciseTitle, string ExercisePhoto, string ExerciseContent)
         {
-            if ((MuscleGroupID == null) || (db.MuscleGroups.Find(MuscleGroupID) == null))
+            if ((id == null) || (db.Exercises.Find(id) == null))
             {
                 return HttpNotFound();
             }
-            string query = "update MuscleGroups set MuscleGroupName=@name, MuscleGroupDesc=@desc" +
-                " where MuscleGroupID=@id";
-            SqlParameter[] myparams = new SqlParameter[3];
-            myparams[0] = new SqlParameter("@name", MuscleGroupName);
-            myparams[1] = new SqlParameter("@desc", MuscleGroupDesc);
-            myparams[2] = new SqlParameter("@id", MuscleGroupID);
+            string query = "update Exercises set ExerciseTitle=@title, ExercisePhoto=@photo, ExerciseContent=@content" +
+                " where ExerciseId=@id";
+            SqlParameter[] myparams = new SqlParameter[4];
+            myparams[0] = new SqlParameter("@title", ExerciseTitle);
+            myparams[1] = new SqlParameter("@photo", ExercisePhoto);
+            myparams[2] = new SqlParameter("@content", ExerciseContent);
+            myparams[3] = new SqlParameter("@id", id);
 
             db.Database.ExecuteSqlCommand(query, myparams);
 
             return RedirectToAction("List");
         }
+       
         //================================================================================= Delete
 
 
@@ -99,18 +101,18 @@ namespace sportSiteMvc.Controllers
             //Debug.WriteLine("The requested delete id is "+id);
             //return View("List");
 
-            if ((id == null) || (db.MuscleGroups.Find(id) == null))
+            if ((id == null) || (db.Exercises.Find(id) == null))
             {
                 return HttpNotFound();
 
             }
-            string query = "delete from MuscleGroups where MuscleGroupID=@id";
+            string query = "delete from Exercises where ExerciseId=@id";
             SqlParameter param = new SqlParameter("@id", id);
             db.Database.ExecuteSqlCommand(query, param);
             return RedirectToAction("List");
 
         }
-        */
+  
         //================================================================================= Details
         public ActionResult Details(int? id)
         {

@@ -1,0 +1,15 @@
+﻿@model sportSiteMvc.Models.MuscleGroup
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>@Model.MuscleGroupName</h2>
+<p>@Model.MuscleGroupDesc</p>
+
+<div>
+    @Html.ActionLink("Edit", "Edit/" + Model.MuscleGroupID)
+</div>
+<div>
+    @Html.ActionLink("Back to List", "List")
+</div>

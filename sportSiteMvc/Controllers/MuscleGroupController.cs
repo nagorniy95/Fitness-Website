@@ -78,9 +78,9 @@ namespace sportSiteMvc.Controllers
 
 
         [HttpPost]
-        public ActionResult Edit(int? MuscleGroupID, string MuscleGroupName, string MuscleGroupDesc)
+        public ActionResult Edit(int? id, string MuscleGroupName, string MuscleGroupDesc)
         {
-            if ((MuscleGroupID == null) || (db.MuscleGroups.Find(MuscleGroupID) == null))
+            if ((id == null) || (db.MuscleGroups.Find(id) == null))
             {
                 return HttpNotFound();
             }
@@ -89,7 +89,7 @@ namespace sportSiteMvc.Controllers
             SqlParameter[] myparams = new SqlParameter[3];
             myparams[0] = new SqlParameter("@name", MuscleGroupName);
             myparams[1] = new SqlParameter("@desc", MuscleGroupDesc);
-            myparams[2] = new SqlParameter("@id", MuscleGroupID);
+            myparams[2] = new SqlParameter("@id", id);
 
             db.Database.ExecuteSqlCommand(query, myparams);
 
@@ -114,8 +114,8 @@ namespace sportSiteMvc.Controllers
             return RedirectToAction("List");
             
         }
-
-        public ActionResult Show(int? id)
+        //================================================================================= Details
+        public ActionResult Details(int? id)
         {
             if ((id == null) || (db.MuscleGroups.Find(id) == null))
             {

@@ -4,40 +4,22 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<h2>New Muscle Group</h2>
 
-@using (Html.BeginForm()) 
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>MuscleGroup</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.MuscleGroupName, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.MuscleGroupName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.MuscleGroupName, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.MuscleGroupDesc, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.MuscleGroupDesc, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.MuscleGroupDesc, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
-        </div>
+<form method="POST" action="/MuscleGroup/Create">
+    <div>
+        <div>Name:</div>
+        <input type="text" id="MuscleGroupName_New" name="MuscleGroupName" />
     </div>
-}
+    <div>
+        <div>Description:</div>
+        <input type="text" id="MuscleGroupDesc" name="MuscleGroupDesc" />
+    </div>
+    <div>
+        <input type="submit" value="Submit" />
+    </div>
+</form>
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "List")
 </div>

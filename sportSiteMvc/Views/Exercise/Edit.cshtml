@@ -1,0 +1,28 @@
+﻿@model sportSiteMvc.Models.Exercise
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+<form method="POST" action="/Exercise/Edit/@Model.ExerciseId">
+    <div>
+        <label>Title</label>
+        <input type="text" value="@Model.ExerciseTitle" id="ExerciseTitle" name="ExerciseTitle" />
+    </div>
+    <div>
+        <label>Photo</label>
+        <input type="text" value="@Model.ExercisePhoto" id="ExercisePhoto" name="ExercisePhoto" />
+    </div>
+    <div>
+        <label>Content</label>
+        <input type="text" value="@Model.ExerciseContent" id="ExerciseContent" name="ExerciseContent" />
+    </div>
+    <div>
+        <input type="submit" value="Submit" />
+    </div>
+</form>
+<div>
+    @Html.ActionLink("Back to List", "List")
+</div>

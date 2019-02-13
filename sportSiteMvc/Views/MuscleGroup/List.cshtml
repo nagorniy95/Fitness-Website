@@ -4,35 +4,22 @@
     ViewBag.Title = "List";
 }
 
-<h2>List</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.MuscleGroupName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MuscleGroupDesc)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.MuscleGroupName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MuscleGroupDesc)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MuscleGroupID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MuscleGroupID })
-        </td>
-    </tr>
-}
-
-</table>
+<div>
+    <h2>Muscle Group</h2>
+</div>
+<div>
+    @Html.ActionLink("Create New Group", "Create")
+</div>
+<div>
+    @foreach (var muscleGroup in Model)
+    {
+    <h3>
+        @Html.DisplayFor(modelItem => muscleGroup.MuscleGroupName)
+    </h3>
+    <div>
+        @Html.ActionLink("Edit", "Edit", new { id = muscleGroup.MuscleGroupID }) |
+        @Html.ActionLink("Details", "Details", new { id = muscleGroup.MuscleGroupID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = muscleGroup.MuscleGroupID })
+    </div>
+    }
+</div>
