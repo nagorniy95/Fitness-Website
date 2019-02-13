@@ -36,15 +36,12 @@ namespace sportSiteMvc.Controllers
 
         public ActionResult Create()
         {
-            //I want to show the new muscle group form
-
             return List();
         }
 
         [HttpPost]
         public ActionResult Create(string ExerciseTitle, string ExercisePhoto, string ExerciseContent)
         {
-            //i want to insert data
             string query = "insert into Exercises (ExerciseTitle, ExercisePhoto, ExerciseContent)" +
                 " values (@title, @photo, @content)";
             SqlParameter[] myparams = new SqlParameter[3];
@@ -72,7 +69,6 @@ namespace sportSiteMvc.Controllers
             return View(mytag);
         }
 
-
         [HttpPost]
         public ActionResult Edit(int? id, string ExerciseTitle, string ExercisePhoto, string ExerciseContent)
         {
@@ -95,11 +91,8 @@ namespace sportSiteMvc.Controllers
        
         //================================================================================= Delete
 
-
         public ActionResult Delete(int? id)
         {
-            //Debug.WriteLine("The requested delete id is "+id);
-            //return View("List");
 
             if ((id == null) || (db.Exercises.Find(id) == null))
             {

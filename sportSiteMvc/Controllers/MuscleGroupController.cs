@@ -41,17 +41,12 @@ namespace sportSiteMvc.Controllers
 
         public ActionResult Create()
         {
-            //I want to show the new muscle group form
-
             return View();
         }
 
         [HttpPost]
         public ActionResult Create(string MuscleGroupName, string MuscleGroupDesc)
         {
-
-            
-            //i want to insert data
             string query = "insert into MuscleGroups (MuscleGroupName, MuscleGroupDesc)" +
                 " values (@name, @desc)";
             SqlParameter[] myparams = new SqlParameter[2];
@@ -100,9 +95,6 @@ namespace sportSiteMvc.Controllers
         
         public ActionResult Delete(int? id)
         {
-            //Debug.WriteLine("The requested delete id is "+id);
-            //return View("List");
-            
             if ((id == null) || (db.MuscleGroups.Find(id) == null))
             {
                 return HttpNotFound();
@@ -115,6 +107,7 @@ namespace sportSiteMvc.Controllers
             
         }
         //================================================================================= Details
+
         public ActionResult Details(int? id)
         {
             if ((id == null) || (db.MuscleGroups.Find(id) == null))
