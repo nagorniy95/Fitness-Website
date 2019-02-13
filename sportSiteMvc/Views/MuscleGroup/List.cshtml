@@ -8,18 +8,22 @@
     <h2>Muscle Group</h2>
 </div>
 <div>
-    @Html.ActionLink("Create New Group", "Create")
-</div>
-<div>
     @foreach (var muscleGroup in Model)
     {
-    <h3>
-        @Html.DisplayFor(modelItem => muscleGroup.MuscleGroupName)
-    </h3>
-    <div>
-        @Html.ActionLink("Edit", "Edit", new { id = muscleGroup.MuscleGroupID }) |
-        @Html.ActionLink("Details", "Details", new { id = muscleGroup.MuscleGroupID }) |
-        @Html.ActionLink("Delete", "Delete", new { id = muscleGroup.MuscleGroupID })
+    <div class="group_container">
+        <h3 class="title">
+            @Html.DisplayFor(modelItem => muscleGroup.MuscleGroupName)
+        </h3>
+        <div class="options">
+            @Html.ActionLink("Edit", "Edit", new { id = muscleGroup.MuscleGroupID }) |
+            @Html.ActionLink("Details", "Details", new { id = muscleGroup.MuscleGroupID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = muscleGroup.MuscleGroupID })
+        </div>
+        <div class="clear"></div>
     </div>
     }
+</div>
+
+<div class="create_new">
+    @Html.ActionLink("New Group", "Create")
 </div>
