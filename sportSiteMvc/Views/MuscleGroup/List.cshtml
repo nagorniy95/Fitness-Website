@@ -14,11 +14,11 @@
         <h3 class="title">
             @Html.DisplayFor(modelItem => muscleGroup.MuscleGroupName)
         </h3>
-        <div class="options">
+        <p class="options edd">
             @Html.ActionLink("Edit", "Edit", new { id = muscleGroup.MuscleGroupID }) |
             @Html.ActionLink("Details", "Details", new { id = muscleGroup.MuscleGroupID }) |
             @Html.ActionLink("Delete", "Delete", new { id = muscleGroup.MuscleGroupID })
-        </div>
+        </p>
         <div class="clear"></div>
     </div>
     }

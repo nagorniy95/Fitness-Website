@@ -5,11 +5,13 @@
 }
 
 <h2>@Model.MuscleGroupName</h2>
-<p>@Model.MuscleGroupDesc</p>
+<div class="content">
+    <p>@Model.MuscleGroupDesc</p>
+</div>
 
-<div>
-    @Html.ActionLink("Edit", "Edit/" + Model.MuscleGroupID)
-</div>
-<div>
+<p class="edd position">
     @Html.ActionLink("Back to List", "List")
-</div>
+</p>
+<p class="edd position">
+    @Html.ActionLink("Edit", "Edit/" + Model.MuscleGroupID)
+</p>

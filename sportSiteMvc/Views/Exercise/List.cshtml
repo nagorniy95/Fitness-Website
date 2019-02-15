@@ -17,10 +17,10 @@
                 @Html.ActionLink(exercise.ExerciseTitle, "Details/" + exercise.ExerciseId, "Exercise")
             </h3>
         </div>
-        <div class="options">
+        <p class="options edd">
             @Html.ActionLink("Edit", "Edit", new { id = exercise.ExerciseId }) |
             @Html.ActionLink("Delete", "Delete", new { id = exercise.ExerciseId })
-        </div>
+        </p>
         <div class="clear"></div>
     </div>
     }

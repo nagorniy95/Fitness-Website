@@ -7,13 +7,14 @@
 <h2>@Model.ExerciseTitle</h2>
 
 
-<div>
+<div class="content">
     <p>@Model.ExercisePhoto</p>
     <p>@Model.ExerciseContent</p>
 </div>
-<div>
-    @Html.ActionLink("Edit", "Edit/" + Model.ExerciseId)
-</div>
-<div>
+
+<p class="edd position">
     @Html.ActionLink("Back to List", "List")
-</div>
+</p>
+<p class="edd position">
+    @Html.ActionLink("Edit", "Edit/" + Model.ExerciseId)
+</p>
